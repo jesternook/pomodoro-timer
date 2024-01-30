@@ -1,1 +1,127 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$p-color: (
+  50: #e2f2ec,
+  100: #b9dfce,
+  200: #8fcbb0,
+  300: #68b692,
+  400: #50a67e,
+  500: #41966c,
+  600: #3c8961,
+  700: #357953,
+  800: #2d6947,
+  900: #204d2f,
+  contrast: (50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+$s-color: (
+  50: #fcfafa,
+  100: #f7f5f5,
+  200: #f1efef,
+  300: #e4e2e2,
+  400: #c1bfbf,
+  500: #a2a1a1,
+  600: #797878,
+  700: #656363,
+  800: #454444,
+  900: #242323,
+  contrast: (50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+$t-color: (
+  50: #f9f2e0,
+  100: #f2ddb2,
+  200: #eac780,
+  300: #e2b14f,
+  400: #dea12c,
+  500: #da9210,
+  600: #d6880a,
+  700: #d07a04,
+  800: #ca6c00,
+  900: #c05600,
+  contrast: (50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+$r-color: (
+  50: #ffebef,
+  100: #ffcdd3,
+  200: #ff9a99,
+  300: #fc7070,
+  400: #ff4a49,
+  500: #ff382b,
+  600: #fe2c2d,
+  700: #ec1f27,
+  800: #de1520,
+  900: #de1520,
+  contrast: (50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+$pomodoro-timer-primary: mat.define-palette($p-color, 900, 300);
+$pomodoro-timer-accent: mat.define-palette($s-color, 900, 300);
+$pomodoro-timer-tertiary: mat.define-palette($t-color, 800, 400, 900);
+$pomodoro-timer-warn: mat.define-palette($r-color, 300, 100, 700);
+
+$pomodoro-timer-theme: mat.define-light-theme((
+  color: (
+    primary: $pomodoro-timer-primary,
+    accent: $pomodoro-timer-accent,
+    tertiary: $pomodoro-timer-tertiary,
+    warn: $pomodoro-timer-warn,
+  )
+));
+
+@include mat.all-component-themes($pomodoro-timer-theme);
+
+html, body { 
+  height: 100%; 
+}
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.bg-color {
+  background-color: transparent;
+}
